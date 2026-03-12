@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JBL Tune Beam | True Wireless Earbuds</title>
+  <meta name="description"
+    content="JBL Tune Beam In-Ear Wireless — ANC, 40hr battery, JBL Pure Bass Sound, IP54, Bluetooth 5.3. Experience the future of sound.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ░░ LOADING SCREEN ░░ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <img src="jbl logo.jpg" alt="JBL" class="loader-logo-img">
+      <div class="loader-product">Tune Beam</div>
+      <div class="loader-track">
+        <div class="loader-fill" id="loader-fill"></div>
+      </div>
+      <div class="loader-pct" id="loader-pct">0%</div>
+    </div>
+  </div>
+
+  <!-- ░░ SCROLL PROGRESS ░░ -->
+  <div id="progress-bar"></div>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#">
+      <img src="jbl logo.jpg" alt="JBL" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#s-sound">Sound</a></li>
+      <li><a href="#s-anc">ANC</a></li>
+      <li><a href="#s-battery">Battery</a></li>
+      <li><a href="#s-specs">Specs</a></li>
+    </ul>
+    <a href="#s-buy" class="nav-cta">Buy Now ↗</a>
+  </nav>
+
+  <!-- ░░ CANVAS STAGE (sticky) ░░ -->
+  <div id="canvas-wrap">
+    <!-- Floating gradient orbs for atmosphere -->
+    <div class="orbs-container">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <video id="v" muted playsinline preload="auto" style="display:none;"></video>
+    <canvas id="c"></canvas>
+    <canvas id="particles"></canvas>
+    <div class="canvas-vignette"></div>
+  </div>
+
+  <!-- ░░ SCROLL STORY ░░ -->
+  <div id="story">
+
+    <!-- § 1  HERO -->
+    <section class="scene scene-hero" id="s-hero">
+      <div class="panel panel-center glass-none" id="hero-panel">
+        <p class="eyebrow">JBL Tune Beam</p>
+        <h1>In‑Ear<br>Wireless</h1>
+        <p class="tagline">Hear nothing.<br>Feel everything.</p>
+        <div class="badge-row">
+          <span class="badge">ANC</span>
+          <span class="badge">IP54</span>
+          <span class="badge">40h Battery</span>
+          <span class="badge">BT 5.3</span>
+        </div>
+        <a href="#s-buy" class="hero-cta">Explore &amp; Buy</a>
+      </div>
+      <!-- Scroll hint -->
+      <div class="scroll-hint">
+        <span>Scroll to explore</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 7l6 6 6-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- § 2  SOUND -->
+    <section class="scene" id="s-sound">
+      <div class="panel panel-left glass">
+        <p class="card-label">Audio Quality</p>
+        <h2>JBL Pure<br>Bass Sound</h2>
+        <p class="card-body">Precision-engineered <em>6mm dynamic drivers</em> deliver the iconic JBL Pure Bass
+          signature — deep, tight, and immersive. Every note, every beat, every breath of silence — felt.</p>
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-n">6<sub>mm</sub></span>
+            <span class="stat-l">Driver</span>
+          </div>
+          <div class="stat">
+            <span class="stat-n">20Hz<sub>–20kHz</sub></span>
+            <span class="stat-l">Frequency</span>
+          </div>
+          <div class="stat">
+            <span class="stat-n">100<sub>dB</sub></span>
+            <span class="stat-l">Sensitivity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3  ANC -->
+    <section class="scene" id="s-anc">
+      <div class="panel panel-right glass">
+        <p class="card-label">Noise Cancellation</p>
+        <h2>Active<br>Silence</h2>
+        <p class="card-body">Advanced ANC blocks the world out. Two <em>Smart Ambient</em> modes keep you in control —
+          Ambient Aware lets the world in, TalkThru lets the conversation through.</p>
+        <ul class="pill-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#ff9900" stroke-opacity=".4" />
+              <path d="M5 8l2 2 4-4" stroke="#ff9900" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Active Noise Cancellation
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#ff9900" stroke-opacity=".4" />
+              <path d="M5 8l2 2 4-4" stroke="#ff9900" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Ambient Aware Mode
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#ff9900" stroke-opacity=".4" />
+              <path d="M5 8l2 2 4-4" stroke="#ff9900" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            TalkThru Mode
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#ff9900" stroke-opacity=".4" />
+              <path d="M5 8l2 2 4-4" stroke="#ff9900" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            4-Mic Clear Call System
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- § 4  BATTERY -->
+    <section class="scene" id="s-battery">
+      <div class="panel panel-left glass">
+        <p class="card-label">Battery Life</p>
+        <h2>40 Hours.<br>Total.</h2>
+        <p class="card-body">10 hours in the earbuds. 30 more in the charging case. <em>Speed Charge</em> gives you
+          hours of playback from just minutes of charging.</p>
+        <div class="batt-wrap">
+          <div class="batt-row">
+            <span class="batt-tag">Earbuds</span>
+            <div class="batt-track">
+              <div class="batt-fill bf-buds" style="--w:25%"></div>
+            </div>
+            <span class="batt-val">10h</span>
+          </div>
+          <div class="batt-row">
+            <span class="batt-tag">Case</span>
+            <div class="batt-track">
+              <div class="batt-fill bf-case" style="--w:75%"></div>
+            </div>
+            <span class="batt-val">30h</span>
+          </div>
+          <div class="batt-total">40h Total Playtime</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5  SPECS -->
+    <section class="scene" id="s-specs">
+      <div class="panel panel-right glass">
+        <p class="card-label">Build &amp; Specs</p>
+        <h2>Precision.<br>Engineered.</h2>
+        <table class="spec-table">
+          <tr>
+            <td>Water &amp; Sweat</td>
+            <td>IP54 Rated</td>
+          </tr>
+          <tr>
+            <td>Microphones</td>
+            <td>4-Mic System</td>
+          </tr>
+          <tr>
+            <td>Bluetooth</td>
+            <td>5.3 LE</td>
+          </tr>
+          <tr>
+            <td>Earbud Weight</td>
+            <td>5.2g / piece</td>
+          </tr>
+          <tr>
+            <td>Speed Charge</td>
+            <td>10 min → 1h play</td>
+          </tr>
+          <tr>
+            <td>App</td>
+            <td>JBL Headphones App</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- § 6  APP -->
+    <section class="scene" id="s-app">
+      <div class="panel panel-center glass">
+        <p class="card-label">App Support</p>
+        <h2>Your Sound.<br>Your Rules.</h2>
+        <p class="card-body">Personalize EQ, tweak gesture controls, manage ANC intensity, and update firmware — all
+          through the <em>JBL Headphones App</em>. Available on iOS &amp; Android.</p>
+      </div>
+    </section>
+
+  </div><!-- /story -->
+
+  <!-- ░░ BUY SECTION ░░ -->
+  <section id="s-buy" class="buy-section">
+
+    <div class="buy-header">
+      <p class="buy-eyebrow">JBL Tune Beam · In‑Ear Wireless</p>
+      <h2 class="buy-title">Ready to lose<br>the noise?</h2>
+      <p class="buy-sub">Premium ANC earbuds, available now at your favourite store.</p>
+    </div>
+
+    <div class="store-buttons">
+
+      <!-- Amazon -->
+      <a class="store-img-link link-amazon"
+        href="https://www.amazon.in/JBL-Playtime-Customized-Headphones-Personi-Fi/dp/B0DK3W2XK3?th=1" target="_blank"
+        rel="noopener noreferrer">
+        <img src="amazon.jpg" alt="Amazon logo" class="store-img-btn">
+      </a>
+
+      <!-- Flipkart -->
+      <a class="store-img-link link-flipkart"
+        href="https://www.flipkart.com/jbl-tune-230nctws-active-noise-cancellation-40h-playtime-jbl-app-speed-charge-bluetooth-headset/p/itmcaa38914a94b9"
+        target="_blank" rel="noopener noreferrer">
+        <img src="flipkart.jpg" alt="Flipkart logo" class="store-img-btn">
+      </a>
+
+      <!-- Reliance Digital -->
+      <a class="store-img-link link-reliance"
+        href="https://www.reliancedigital.in/product/jbl-tune-beam-in-ear-earbuds-true-wireless-tws-active-noise-cancellation-with-mic48-hours-battery-and-quick-charge-ip54-water-and-dust-resistance-ambient-aware-and-talk-thrubluetooth-53-le-black-liihdg"
+        target="_blank" rel="noopener noreferrer">
+        <img src="reliance digital.jpg" alt="Reliance Digital logo" class="store-img-btn">
+      </a>
+
+    </div>
+
+    <!-- Amazon -->
+
+
+    <p class="buy-footer">© 2025 JBL / HARMAN International. All rights reserved.</p>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
