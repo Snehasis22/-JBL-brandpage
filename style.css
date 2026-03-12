@@ -296,6 +296,7 @@ em {
   top: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: 1;
   background: #000;
   overflow: hidden;
@@ -432,12 +433,14 @@ em {
 #story {
   position: relative;
   margin-top: -100vh;
+  margin-top: -100dvh;
   z-index: 10;
   pointer-events: none;
 }
 
 .scene {
   height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   padding: 0 6%;
@@ -1139,131 +1142,7 @@ h2 {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .store-buttons {
-    max-width: 420px;
-  }
-
-  .orb-1 {
-    width: 400px;
-    height: 400px;
-  }
-
-  .orb-2 {
-    width: 350px;
-    height: 350px;
-  }
-
-  .orb-3 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 900px) {
-  .store-buttons {
-    max-width: 360px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  .scene {
-    padding: 0 5%;
-  }
-
-  .panel {
-    max-width: 100%;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .glass {
-    padding: 2rem 1.8rem;
-  }
-
-  .stat {
-    padding: 0 0.5rem;
-  }
-
-  .stat:first-child {
-    padding-left: 0;
-  }
-
-  .stat:last-child {
-    padding-right: 0;
-  }
-
-  .pill-list li {
-    justify-content: center;
-  }
-
-  .batt-tag {
-    min-width: 38px;
-  }
-
-  .spec-table {
-    font-size: 0.82rem;
-  }
-
-  .store-buttons {
-    max-width: 100%;
-    padding: 0 5%;
-  }
-
-  .store-btn {
-    padding: 13px 22px;
-    font-size: 0.9rem;
-  }
-
-  .orb {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2.6rem;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  .glass {
-    padding: 1.6rem;
-  }
-
-  #s-buy {
-    padding: 6rem 5% 4rem;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   PERFORMANCE — GPU optimizations
-   ═══════════════════════════════════════════════════════════════ */
-#canvas-wrap,
-#c,
-#particles,
-.canvas-vignette,
-.orb,
-.panel {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE QUERIES
+   RESPONSIVE DESIGN — Multi-device Optimization
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
@@ -1273,12 +1152,19 @@ h2 {
 
   .nav-links {
     display: none;
-    /* Hide links on tablet/mobile for minimalism */
   }
 
   h1 {
-    font-size: 4.5rem;
+    font-size: clamp(3rem, 10vw, 4.5rem);
   }
+
+  .store-buttons {
+    max-width: 420px;
+  }
+
+  .orb-1 { width: 400px; height: 400px; }
+  .orb-2 { width: 350px; height: 350px; }
+  .orb-3 { width: 300px; height: 300px; }
 }
 
 @media (max-width: 768px) {
@@ -1289,67 +1175,153 @@ h2 {
 
   .panel {
     max-width: 100%;
-    text-align: center;
-    padding: 2rem;
+    width: 100%;
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding: 2.2rem 1.6rem;
+    transform: translateY(30px); /* Slightly smaller entry for mobile */
   }
 
-  .panel-left,
-  .panel-right {
-    margin: 0 auto;
+  .glass {
+    padding: 2.2rem 1.6rem;
+    border-radius: 24px;
   }
 
   h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 12vw, 3.2rem);
+    margin-bottom: 0.8rem;
   }
 
   h2 {
     font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
   }
 
   .stat-row {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    padding-top: 1.2rem;
   }
 
   .stat {
     border-right: none;
-    padding: 0 1rem;
-    min-width: 100px;
+    min-width: 80px;
+    padding: 0 0.5rem;
+  }
+
+  .pill-list li {
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
   }
 
   .nav-cta {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.1rem;
     font-size: 0.75rem;
+    border-width: 1.5px;
   }
 
   .store-buttons {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
-  .store-img-link {
-    width: auto;
+  .store-img-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .orb {
+    display: none; /* Hide background orbs on mobile to reduce GPU load */
+  }
+
+  #s-buy {
+    padding: 6rem 5% 4rem;
+  }
+
+  .buy-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .buy-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .buy-sub {
+    font-size: 0.95rem;
+    padding: 0 1rem;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
-  .tagline {
-    font-size: 1rem;
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .scene-hero {
+    padding-bottom: 7vh;
   }
 
   .hero-cta {
     width: 100%;
-    padding: 0.9rem 1.5rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
   }
 
-  .glass {
-    padding: 1.8rem;
+  .badge-row {
+    gap: 0.4rem;
+  }
+
+  .badge {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .stat-n {
+    font-size: 1.3rem;
+  }
+
+  .spec-table td {
+    padding: 0.6rem 0;
+    font-size: 0.8rem;
+  }
+
+  .store-img-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PERFORMANCE — Hardware Acceleration
+   ═══════════════════════════════════════════════════════════════ */
+#canvas-wrap,
+#c,
+#particles,
+.canvas-vignette,
+.panel,
+.nav-logo-img,
+.hero-cta,
+.store-img-btn {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Disable smooth scrolling on mobile if it feels laggy (optional, but keep for now) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
